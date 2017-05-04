@@ -1,0 +1,59 @@
+
+<div class="jumbotron">
+      <h1 class="text-center">Simulador</h1>
+</div>
+
+  <div class="container">
+
+  <form (submit)="simular($event, origem.value, destino.value)">
+
+    <div class="row text-center">
+
+        <div class="col-md-6">           
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Origem</h3>
+                  </div>
+                  <div class="panel-body">
+                    <select #origem (change)="0" style="width: 100% ">
+                      <option *ngFor="let estacao of estacoes" [value]="estacao.nome"> {{estacao.nome}} </option>
+                    </select>
+                  </div>
+                </div>           
+        </div>
+
+        <div class="col-md-6">          
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Destino</h3>
+              </div>
+              <div class="panel-body">
+                <select #destino (change)="0" style="width: 100%  ">
+                  <option *ngFor="let estacao of estacoes" [value]="estacao.nome"> {{estacao.nome}} </option>
+                </select>
+              </div>
+            </div>          
+        </div>
+
+    </div>
+
+    <div align="center">
+      <div class="btn-group" role="group">
+        <button type="submit" class="btn btn-primary" style="width: 300px">Simular</button>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="col-md-12">
+      <div class="panel panel-info text"  style="max-height: 380px; overflow-y: scroll;">
+        <div class="panel-body">
+          <ul *ngFor="let estacao2 of estacoesSimulador">
+            <li class="efeito"> {{ estacao2.nome }} </li>
+          </ul>
+        </div>
+      </div>
+    </div>   
+
+    </form>
+  </div>

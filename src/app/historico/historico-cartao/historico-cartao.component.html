@@ -1,0 +1,75 @@
+<div class="jumbotron">
+      <h1 class="text-center">Historico do Cartao {{ codCartao }} </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form [formGroup]="meuForm" (submit)="getHistoricoCartao($event)">
+        <div class="input-group">
+
+          <input
+            class="form-control"
+            formControlName="cartao"            
+            name="cartao"
+            [(ngModel)]="codCartao"
+            placeholder="Digite o código do cartao"
+            maxlength="6"
+            style="float: left"
+            required/>
+
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"
+              [disabled]="meuForm.invalid">Pesquisar</button>
+          </span>
+                                
+        </div>
+        <div *ngIf="meuForm.controls.cartao.invalid">
+            <span 
+              *ngIf="meuForm.controls.cartao.errors.required"
+              class="form-control alert-danger">
+                  Cartão obrigatório
+            </span>          
+            <span 
+              *ngIf="meuForm.controls.cartao.errors.minlength"
+              class="form-control alert-danger">
+                  Cartão deve ter 6 dígitos
+            </span>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <br>
+
+    <div class="col-md-8 col-md-offset-2">           
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Historico</h3>
+        </div>
+        <div class="panel-body">
+
+          <table class="table table-hover">
+            <tr>
+              <td>Data</td>
+              <td>Descrição</td>
+              <td>Saldo Anterior</td>
+              <td>Saldo Atual</td>
+              <td>Valor</td>
+            </tr>
+            <tr *ngFor="let h of historico">
+              <td> {{ h.dataTransacao }} </td>
+              <td> {{ h.descricao }} </td>
+              <td> {{ h.saldoAnterior }} </td>
+              <td> {{ h.saldoAtual }} </td>
+              <td> {{ h.valor }} </td>
+            </tr>
+          </table>
+          
+        </div>
+      </div>           
+    </div>
+
+
+
+</div>
