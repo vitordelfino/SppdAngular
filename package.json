@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",//"node index.js",
+    "start": "node index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -27,8 +27,6 @@
     "ng2-bootstrap": "^1.6.3",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4",
-
-    //devDependencies
     "@angular/cli": "1.0.1",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
