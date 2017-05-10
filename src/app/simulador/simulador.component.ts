@@ -13,7 +13,7 @@ export class SimuladorComponent implements OnInit {
   estacoesSimulador = [];
   
   
-  url: string = 'http://sppd.com.br/WebServiceRestSppd/rest/sppd/getListaEstacao';
+  url: string = 'http://sppd.com.br/WebServiceRestSppd/rest/sppd/getListaEstacaoTeste';
   url1: string = 'http://localhost:8080/WebServiceSPPD/sppd/dijkstra/encontrarMenorCaminho/';
 
   constructor(http: Http){  
