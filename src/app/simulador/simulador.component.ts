@@ -11,8 +11,9 @@ export class SimuladorComponent implements OnInit {
   http: Http;
   estacoes = [];
   estacoesSimulador = [];
-
-  url: string = 'http://localhost:8080/WebServiceSPPD/sppd/getListaEstacaoTeste';
+  
+  
+  url: string = 'http://sppd.com.br/WebServiceRestSppd/rest/sppd/getListaEstacao';
   url1: string = 'http://localhost:8080/WebServiceSPPD/sppd/dijkstra/encontrarMenorCaminho/';
 
   constructor(http: Http){  
