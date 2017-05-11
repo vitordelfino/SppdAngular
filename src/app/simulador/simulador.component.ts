@@ -12,6 +12,7 @@ export class SimuladorComponent implements OnInit {
   estacoes = [];
   estacoesSimulador = [];
 
+
   url: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/getListaEstacaoTeste';
   url1: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/dijkstra/encontrarMenorCaminho/';
 
