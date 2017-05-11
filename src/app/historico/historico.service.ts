@@ -10,7 +10,7 @@ export class HistoricoService {
 
 
    getHistoricoSaldoCartao(codCartao: number){
-     let url: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/cartao/getHistoricoCartao/web/'+codCartao;
+     let url: string = 'https://ws-sppd.herokuapp.com/rest/sppd/cartao/getHistoricoCartao/web/'+codCartao;
      
      return this.http 
         .get(url)
@@ -18,7 +18,7 @@ export class HistoricoService {
    }
 
    getHistoricoViagem(codCartao: number){
-     let url: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/viagens/getHistoricoViagemSite/'+codCartao;
+     let url: string = 'https://ws-sppd.herokuapp.com/rest/sppd/viagens/getHistoricoViagemSite/'+codCartao;
 
      return this.http
         .get(url)
