@@ -1,12 +1,12 @@
 <div class="jumbotron">
-      <h1 class="text-center">Historico de Saldo </h1>
+      <h1 class="text-center">Historico de Viagem </h1>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       
-      <app-cartao (acao)="getHistoricoSaldoCartao($event)"></app-cartao>
+      <app-cartao (acao)="getHistoricoViagem($event)"></app-cartao>
 
     </div>
   </div>
@@ -23,16 +23,14 @@
           <table class="table table-hover">
             <tr>
               <td>Data</td>
-              <td>Descrição</td>
-              <td>Saldo Anterior</td>
-              <td>Saldo Atual</td>
+              <td>Origem</td>
+              <td>Destino</td>
               <td>Valor</td>
             </tr>
             <tr *ngFor="let h of historico">
-              <td> {{ h.dataTransacao }} </td>
-              <td> {{ h.descricao }} </td>
-              <td> {{ h.saldoAnterior }} </td>
-              <td> {{ h.saldoAtual }} </td>
+              <td> {{ h.dataEntrada }} </td>
+              <td> {{ h.origem.nome }} </td>
+              <td> {{ h.destino.nome }} </td>
               <td> {{ h.valor }} </td>
             </tr>
           </table>

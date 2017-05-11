@@ -9,14 +9,20 @@ export class HistoricoService {
    }
 
 
-   getHistoricoCartao(codCartao: number){
-     let url: string = 'http://localhost:8080/WebServiceSPPD/sppd/cartao/getHistoricoCartao/web/'+codCartao;
+   getHistoricoSaldoCartao(codCartao: number){
+     let url: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/cartao/getHistoricoCartao/web/'+codCartao;
      
      return this.http 
         .get(url)
-        .map(res => res.json()); 
+        .map(res => res.json());         
+   }
 
-        
+   getHistoricoViagem(codCartao: number){
+     let url: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/viagens/getHistoricoViagemSite/'+codCartao;
+
+     return this.http
+        .get(url)
+        .map(res => res.json());
    }
 
 }

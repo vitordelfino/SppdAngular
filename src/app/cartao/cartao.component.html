@@ -1,0 +1,32 @@
+<form [formGroup]="meuForm">
+        <div class="input-group">
+
+          <input
+            class="form-control"
+            formControlName="cartao"            
+            name="cartao"
+            [(ngModel)]="codCartao"
+            placeholder="Digite o código do cartao"
+            maxlength="6"
+            style="float: left"
+            required/>
+
+          <span class="input-group-btn">
+            <button (click)="executaAcao()" type="submit" class="btn btn-primary"
+              [disabled]="meuForm.invalid">Pesquisar</button>
+          </span>
+                                
+        </div>
+        <div *ngIf="meuForm.controls.cartao.invalid">
+            <span 
+              *ngIf="meuForm.controls.cartao.errors.required"
+              class="form-control alert-danger">
+                  Cartão obrigatório
+            </span>          
+            <span 
+              *ngIf="meuForm.controls.cartao.errors.minlength"
+              class="form-control alert-danger">
+                  Cartão deve ter 6 dígitos
+            </span>
+          </div>
+      </form>

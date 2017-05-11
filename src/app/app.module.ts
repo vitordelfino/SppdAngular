@@ -1,8 +1,9 @@
+import { CartaoModule } from './cartao/cartao.module';
 import { routing } from './app.routes';
 import { HistoricoModule } from './historico/historico.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -18,14 +19,16 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     TabelaComponent,
     EstacaoComponent,
     SimuladorComponent,
-    NavBarComponent
+    NavBarComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     HistoricoModule,
-    routing
+    routing,
+    ReactiveFormsModule,
+    CartaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
