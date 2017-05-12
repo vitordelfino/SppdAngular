@@ -16,7 +16,7 @@
                   </div>
                   <div class="panel-body">
                     <select #origem (change)="0" style="width: 100% ">
-                      <option *ngFor="let estacao of estacoes" [value]="estacao.nome"> {{estacao.nome}} </option>
+                      <option *ngFor="let estacao of estacoes" [value]="estacao.codEstacao"> {{estacao.nome}} </option>
                     </select>
                   </div>
                 </div>           
@@ -29,7 +29,7 @@
               </div>
               <div class="panel-body">
                 <select #destino (change)="0" style="width: 100%  ">
-                  <option *ngFor="let estacao of estacoes" [value]="estacao.nome"> {{estacao.nome}} </option>
+                  <option *ngFor="let estacao of estacoes" [value]="estacao.codEstacao"> {{estacao.nome}} </option>
                 </select>
               </div>
             </div>          
