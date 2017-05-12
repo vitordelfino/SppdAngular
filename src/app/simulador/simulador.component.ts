@@ -13,8 +13,8 @@ export class SimuladorComponent implements OnInit {
   estacoesSimulador = [];
 
 
-  url: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/getListaEstacaoTeste';
-  url1: string = 'http://localhost:8080/WebServiceRestSppd/rest/sppd/dijkstra/encontrarMenorCaminho/';
+  url: string = 'https://ws-sppd.herokuapp.com/rest/sppd/getListaEstacaoTeste';
+  url1: string = 'https://ws-sppd.herokuapp.com/rest/sppd/dijkstra/encontrarMenorCaminho/';
 
   constructor(http: Http){  
     this.http = http;
@@ -35,8 +35,9 @@ export class SimuladorComponent implements OnInit {
 
   simular(event, origem, destino){
     event.preventDefault();
-    origem = this.getNomeEstacao(origem);
-    destino = this.getNomeEstacao(destino);
+
+    //origem = this.getNomeEstacao(origem);
+    //destino = this.getNomeEstacao(destino);
 
     this.http.get(this.url1+origem+'/'+destino)
       .map(res => res.json())
